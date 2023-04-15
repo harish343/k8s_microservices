@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: quote-app-name
+  labels:
+    name: quote-app-name
+    app: demo-quote-app
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      name: quote-app-name
+      app: demo-quote-app
+
+  template: 
+    metadata:
+      name: quote-app-name
+      labels:
+        name: quote-app-name
+        app: demo-quote-app
+    spec: 
+      containers:
+         - name: quote-server
+           image: harish343/quotepythonserver:3
+           ports:
+            - containerPort: 5000
+

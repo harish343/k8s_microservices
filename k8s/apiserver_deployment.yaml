@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: api-server-delpoy
+  labels:
+    name: api-server-delpoy
+    app: demo-quote-app
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      name: api-server-delpoy
+      app: demo-quote-app
+
+  template: 
+    metadata:
+      name: api-server-delpoy
+      labels:
+        name: api-server-delpoy
+        app: demo-quote-app
+    spec: 
+      containers:
+         - name: api-server
+           image: harish343/apigateway:7
+           ports:
+            - containerPort: 3000
+
+
+            
+

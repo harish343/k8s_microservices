@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: quote-service
+  labels:
+    name: quote-service
+    app: demo-quote-app
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30004
+  selector:
+      name: quote-app-name
+      app: demo-quote-app
+      

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: php-app-name
+  labels:
+    name: php-app-name
+    app: demo-quote-app
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      name: php-app-name
+      app: demo-quote-app
+
+  template: 
+    metadata:
+      name: php-app-name
+      labels:
+        name: php-app-name
+        app: demo-quote-app
+    spec: 
+      containers:
+         - name: php-server
+           image: harish343/phpserver:1
+           ports:
+            - containerPort: 80
+
