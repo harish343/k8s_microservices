@@ -21,7 +21,7 @@ spec:
     spec: 
       containers:
          - name: frontend-app
-           image: harish343/frontendbuild:7
+           image: harish343/harish343.me
            ports:
             - containerPort: 80
 
